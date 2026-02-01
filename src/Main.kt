@@ -44,12 +44,23 @@
 
 
 
+    //val devDept = DevelopmentDepartment()
+    //val testDept = TestingDepartment()
+    //println("\nОтдел 1: ${devDept.departmentName}")
+    //devDept.printDepartmentGoal()
+    //println("\nОтдел 2: ${testDept.departmentName}")
+    //testDept.printDepartmentGoal()
+
+    println("\n")
     val devDept = DevelopmentDepartment()
-    val testDept = TestingDepartment()
-    println("\nОтдел 1: ${devDept.departmentName}")
-    devDept.printDepartmentGoal()
-    println("\nОтдел 2: ${testDept.departmentName}")
-    testDept.printDepartmentGoal()
+    val reports : List<ReportGenerator> = listOf(employee,devDept)
+    println("Генерация отчётов")
+
+    for (reporter in reports){
+        println(reporter.generateReport())
+                println()
+    }
 }
+
 
 

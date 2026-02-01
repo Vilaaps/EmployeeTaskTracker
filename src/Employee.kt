@@ -3,7 +3,7 @@
     position: String,
     salary: Int,
     yearsOfExperience: Int
-) {
+) : ReportGenerator {
     private var _fullName: String = fullName
     private var _position: String = position
     private var _salary: Int = salary
@@ -36,4 +36,13 @@
                 else -> _yearsOfExperience = value
             }
         }
+    override fun generateReport(): String {
+        return listOf(
+            "Инфа о сотруднике",
+            "ФИО: $fullName",
+            "Должность: $position",
+            "Зп: $salary",
+            "Опыт работы: $yearsOfExperience лет"
+        ).joinToString("\n")
+    }
 }
