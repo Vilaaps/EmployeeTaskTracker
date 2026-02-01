@@ -1,5 +1,5 @@
 ﻿fun main() {
-    val employee = Employee(
+/*    val employee = Employee(
         fullName = "Самойлова О.М",
         position = "Журналист",
         salary = 140000,
@@ -40,16 +40,16 @@
     println("task3: ${task3.hashCode()}")
     println("\n4. copy():")
     val task1Copy = task1.copy(priority = Priority.LOW)
-    println("Копия task1 с LOW: $task1Copy")
+    println("с LOW: $task1Copy")
 
 
 
-    //val devDept = DevelopmentDepartment()
-    //val testDept = TestingDepartment()
-    //println("\nОтдел 1: ${devDept.departmentName}")
-    //devDept.printDepartmentGoal()
-    //println("\nОтдел 2: ${testDept.departmentName}")
-    //testDept.printDepartmentGoal()
+    val devDept = DevelopmentDepartment()
+    val testDept = TestingDepartment()
+    println("\nОтдел 1: ${devDept.departmentName}")
+    devDept.printDepartmentGoal()
+    println("\nОтдел 2: ${testDept.departmentName}")
+    testDept.printDepartmentGoal()
 
     println("\n")
     val devDept = DevelopmentDepartment()
@@ -59,7 +59,21 @@
     for (reporter in reports){
         println(reporter.generateReport())
                 println()
-    }
+    }*/
+
+
+    val employee = Employee("Самойлова О.М", "Журналист", 140000, 10)
+    val task1 = Task("Написать статью о спорте", "СОсветить последние матчи", Priority.HIGH)
+    val task2 = Task("Проверить орфографию", "Вычитать текст на ошибки", Priority.MEDIUM)
+    val task3 = Task("Отправить материал в редакцию", "Финальная подготовка статьи", Priority.HIGH)
+    println("Назначаем задачи:")
+    employee.assignTask(task1)
+    employee.assignTask(task2)
+    println("\nЗавершаем задачу 1...")
+    task1.isCompleted = true
+    employee.assignTask(task3)
+    println("\nФинальный отчет:")
+    println(employee.generateReport())
 }
 
 
